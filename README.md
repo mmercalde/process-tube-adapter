@@ -14,8 +14,7 @@ relies on a printed sealing surface.
 ## How it works
 
 One common **body** screws into a per-size **cap**. The copper stub slides up through the
-cap's reinforced floor. Inside the cap's 17 mm bore sits a **pair of grooved washers** that
-sandwiches **two standard O-rings**:
+cap's reinforced floor. Inside the cap's 17 mm bore sits a thick **channel washer** that carries **two standard O-rings** in edge grooves:
 
 - the **outer ring** seals radially against the **17 mm cap bore**
 - the **inner ring** seals radially against the **copper tube OD**
@@ -34,22 +33,23 @@ cut end of the stub, up the body bore, to the hose.
   is now a solid anvil with only a tube-clearance hole.
 - **No bottoming shoulder.** The plunger nose (Ø15 in the 17 bore) never lands metal-to-
   metal — the rings always take the load. Tighten until firm.
-- **Groove dimensions** (outer 3.0 x 1.4, inner 2.0 x 1.0) are a first cut for ~20 % squeeze
-  and are meant to be tuned after a test fit. Adjust `OG_D` / `IG_D` in `generate.py`.
+- **Edge grooves, ~20% squeeze.** The outer ring sits in a groove in the washer rim
+  (root Ø12.81, vs the 17 bore); the inner ring sits in a groove in the center hole
+  (root = tube OD + 2.85). Tune `SQUEEZE` in `generate.py` after a test fit.
 
 ## Bill of materials
 
 Per assembly:
 - 1 x printed **body** (shared across all tube sizes)
 - 1 x printed **cap** for the tube size in use
-- 2 x printed **grooved washers** for that size
+- 1 x printed **channel washer** (the sealing element) + 1 x printed **backer washer**
 - 1 x **outer O-ring** (seals the bore) + 1 x **inner O-ring** (seals the tube)
 - 1 x **brass 1/4" SAE male-flare x 1/4" MNPT** adapter for the hose (threads into the body boss)
 - Thread sealant (PTFE paste) for the brass-into-boss joint
 
 ### Tube size -> cap -> O-rings
 
-| Tube OD | Cap / washer | Outer ring (bore) | Inner ring (tube) |
+| Tube OD | Cap / washers | Outer ring (bore) | Inner ring (tube) |
 |---------|--------------|-------------------|-------------------|
 | 3/16"   | `*_3-16`     | A112 (12.37x2.62) | A008 (4.47x1.78)  |
 | 1/4"    | `*_1-4`      | A112              | A010 (6.07x1.78)  |
